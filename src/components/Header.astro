@@ -1,15 +1,16 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+
+import DarkModeToggle from './DarkModeToggle.svelte';
 ---
 
-<header>
-  <nav class="flex bg-teal-200 items-center w-full justify-between">
+<header transition:persist transition:name="header">
+  <nav class="flex items-center w-full justify-between">
     <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div class="flex">
-      <HeaderLink href="/">Home</HeaderLink>
+    <div class="flex items-center">
       <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
     </div>
+    <DarkModeToggle client:load />
   </nav>
 </header>

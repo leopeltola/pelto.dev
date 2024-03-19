@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { ViewTransitions } from 'astro:transitions';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <ViewTransitions />
+  </head>
+
+  <body
+    class="bg-gray-50 dark:bg-gray-900 font-normal dark:text-gray-300 flex flex-col min-h-screen"
+    transition:animate="slide"
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline data-astro-rerun>
+      darkMode = localStorage.getItem('darkMode');
+      if (darkMode === 'true') {
+        document.querySelector('body').classList.add('dark');
+      }
+      console.log('darkMode', darkMode);
+    </script>
+  </body>
+</html>

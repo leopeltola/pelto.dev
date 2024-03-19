@@ -15,11 +15,17 @@
     "@astrojs/react": "^3.1.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/svelte": "^5.2.0",
     "@astrojs/tailwind": "^5.1.0",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
     "astro": "^4.5.6",
+    "svelte": "^4.2.12",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10"
   }
 }
