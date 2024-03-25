@@ -1,8 +1,7 @@
 ---
 layout: '../layouts/ContentPage.astro'
 title: Hi, I'm Leo
-description: 'Lorem ipsum dolor sit amet'
-heroImage: '/blog-placeholder-3.jpg'
+description: Lorem ipsum dolor sit amet
 disableToc: true
 ---
 
@@ -11,13 +10,3 @@ I'm a Finnish software developer mostly interested in game and web development. 
 I've been tinkering with games and web stuff for what feels like forever, and I've learned everything I know from people freely sharing their knowledge on the web. I hope to give back to the awesome communities that have helped me along the way.
 
 Expect a mix of tutorials, tips, and maybe a few rants about the trials and tribulations of software development.
-
-import {Icon} from "astro-icon/components";
-
-<a href="https://github.com/leopeltola" target="_blank" class="text-gray-400 hover:text-gray-600 dark:text-gray-600 dark:hover:text-gray-400 inline-block w-fit">
-<Icon name="mdi:github" class="size-10 sm:size-14" />
-</a>
-
-<a href="https://leopeltola.itch.io/" target="_blank" class="text-gray-400 ml-4 hover:text-gray-600 dark:text-gray-600 dark:hover:text-gray-400 inline-block w-fit">
-<Icon name="cib:itch-io" class="size-10 sm:size-14" />
-</a>

@@ -3,13 +3,12 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import { Icon } from 'astro-icon/components';
 
 const {
   frontmatter: {
-    title,
+    title = 'Untitled',
     description,
-    pubDate,
-    updatedDate,
     disableToc = false,
   },
   headings,
@@ -23,23 +22,25 @@ const {
     >
       <div class="prose dark:prose-invert lg:prose-lg">
         <div class="title">
-          {
-            pubDate ? (
-              <div class="date">
-                <FormattedDate date={pubDate} />
-                {updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on{' '}
-                    <FormattedDate date={updatedDate} />
-                  </div>
-                )}
-              </div>
-            ) : null
-          }
           <h1>{title}</h1>
           <hr />
         </div>
         <slot />
+        <a
+          href="https://github.com/leopeltola"
+          target="_blank"
+          class="text-gray-400 hover:text-gray-600 dark:text-gray-600 dark:hover:text-gray-400 inline-block w-fit"
+        >
+          <Icon name="mdi:github" class="size-10 sm:size-14" />
+        </a>
+
+        <a
+          href="https://leopeltola.itch.io/"
+          target="_blank"
+          class="text-gray-400 ml-4 hover:text-gray-600 dark:text-gray-600 dark:hover:text-gray-400 inline-block w-fit"
+        >
+          <Icon name="cib:itch-io" class="size-10 sm:size-14" />
+        </a>
       </div>
     </article>
     {!disableToc ? <TableOfContents headings={headings} /> : null}
