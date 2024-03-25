@@ -2,10 +2,10 @@
 
 # pelto.dev blog
 
-A blog built with AstroJS and TailwindCSS, hosted on Netlify. Uses the AstroJS blog template.
+A blog built with AstroJS and TailwindCSS, hosted on Netlify. Uses the AstroJS blog template. Feel free to fork and use as a base for your own blog.
 
 (Live Website)[https://pelto.dev]
 
 ## License
 
-All code is MIT but the longform texts (as in, blog posts) proprietary.
+All code is MIT but the longform texts (as in, blog posts) are proprietary.
