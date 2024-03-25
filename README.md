@@ -4,7 +4,7 @@
 
 A blog built with AstroJS and TailwindCSS, hosted on Netlify. Uses the AstroJS blog template. Feel free to fork and use as a base for your own blog.
 
-(Live Website)[https://pelto.dev]
+[Live Website](https://pelto.dev)
 
 ## License
 
