@@ -9,17 +9,18 @@ import { ViewTransitions } from 'astro:transitions';
 const { title, description } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <BaseHead title={title} description={description} />
     <ViewTransitions />
   </head>
 
   <body
-    class="bg-gray-50 dark:bg-gray-900 font-normal dark:text-gray-300 flex flex-col min-h-screen"
-    transition:animate="slide"
+    class="bg-gray-100 dark:bg-gray-900 font-normal dark:text-gray-300 flex flex-col min-h-screen selection:bg-cyan-300 selection:text-gray-900 dark:selection:bg-cyan-600 dark:selection:text-gray-100"
+    transition:animate="fade"
   >
     <Header />
+    <!-- <div class="fixed top-0 w-full bg-red-500 h-40 z-[-1]"></div> -->
     <main>
       <slot />
     </main>
@@ -29,7 +30,6 @@ const { title, description } = Astro.props;
       if (darkMode === 'true') {
         document.querySelector('body').classList.add('dark');
       }
-      console.log('darkMode', darkMode);
     </script>
   </body>
 </html>

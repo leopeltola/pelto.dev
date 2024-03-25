@@ -1,9 +1,38 @@
 ---
 const today = new Date();
+
+const links = [
+  {
+    title: 'RSS',
+    url: '/rss.xml',
+  },
+  {
+    title: 'Github',
+    url: 'https://github.com/leopeltola',
+  },
+];
 ---
 
-<footer class="w-full grow flex justify-center items-end">
+<footer
+  transition:persist
+  transition:animate="none"
+  transition:name="footer"
+  class="w-full grow text-sm sm:text-normal flex flex-col justify-center items-center md:my-16 my-8 text-gray-400 dark:text-gray-700"
+>
   <span>
-    &copy; {today.getFullYear()} Your name here. All rights reserved.
+    &copy; {today.getFullYear()} Leo Peltola. All rights reserved.
   </span>
+  <div class="flex mt-4">
+    {
+      links.map((link, index) => (
+        <a
+          href={link.url}
+          class="mx-2 hover:text-gray-600 dark:hover:text-gray-400"
+          target="_blank"
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </div>
 </footer>

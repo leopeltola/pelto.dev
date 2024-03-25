@@ -4,15 +4,22 @@ import BaseLayout from './BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 
-const { title, description, pubDate, updatedDate, headings } =
-  Astro.props;
+const {
+  frontmatter: {
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    disableToc = false,
+  },
+  headings,
+} = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="flex justify-center my-12 sm:my-24 ws-full max-w-5xlk">
-    <!-- <div class="bg-red-500 xl:grow"></div> -->
+  <div class="flex justify-center my-12 sm:my-24">
     <article
-      class="max-w-full md:py-24 py-12 px-2 sm:px-8 md:px-16 shadow-neu-light dark:shadow-neu-dark dark:ring-1 ring-cyan-800 rounded-3xl"
+      class="max-w-full md:py-24 py-12 px-2 bg-gray-100 dark:bg-gray-900 sm:px-8 md:px-16 shadow-neu-light dark:shadow-neu-dark dark:ring-1 ring-cyan-800 rounded-3xl"
     >
       <div class="prose dark:prose-invert lg:prose-lg">
         <div class="title">
@@ -35,6 +42,6 @@ const { title, description, pubDate, updatedDate, headings } =
         <slot />
       </div>
     </article>
-    <TableOfContents headings={headings} />
+    {!disableToc ? <TableOfContents headings={headings} /> : null}
   </div>
 </BaseLayout>

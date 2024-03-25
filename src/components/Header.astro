@@ -5,12 +5,24 @@ import { SITE_TITLE } from '../consts';
 import DarkModeToggle from './DarkModeToggle.svelte';
 ---
 
-<header transition:persist transition:name="header">
-  <nav class="flex items-center w-full justify-between">
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+<header
+  transition:persist
+  transition:name="header"
+  class="2xl:sticky top-0"
+>
+  <nav
+    class="flex items-center w-full justify-between md:px-8 md:py-5 py-3"
+  >
+    <h2>
+      <a href="/" class="p-3 md:p-0 font-bold text-lg">{SITE_TITLE}</a
+      >
+    </h2>
     <div class="flex items-center">
-      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink
+        class="text-gray-400 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-400"
+        href="/blog">posts</HeaderLink
+      >
+      <DarkModeToggle client:load />
     </div>
-    <DarkModeToggle client:load />
   </nav>
 </header>

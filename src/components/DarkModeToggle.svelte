@@ -1,5 +1,17 @@
 <script>
-  let darkMode = false;
+  import { onMount } from 'svelte';
+  let darkMode = true;
+
+  onMount(() => {
+    let darkModeStored = localStorage.getItem('darkMode');
+    if (darkModeStored === 'true') {
+      document.querySelector('body').classList.add('dark');
+      darkMode = true;
+    } else if (darkModeStored === 'false') {
+      document.querySelector('body').classList.remove('dark');
+      darkMode = false;
+    }
+  });
 
   function toggleDarkMode() {
     const body = document.querySelector('body');
@@ -10,7 +22,7 @@
 </script>
 
 <button
-  class="hover:shadow-xl hover:bg-white dark:hover:bg-gray-800 ml-4 p-3 rounded-xl"
+  class="hover:shadow-neu-light dark:hover:shadow-neu-dark flex text-gray-400 hover:text-gray-800 dark:duration-0 dark:text-gray-600 dark:hover:ring-1 ring-cyan-800 dark:hover:text-gray-500 justify-center items-center transition-all md:duration-500 ml-7 p-3 md:p-3 rounded-xl"
   on:click={toggleDarkMode}
 >
   {#if darkMode}
