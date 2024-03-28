@@ -24,7 +24,7 @@
 <button
   class="hover:shadow-neu-light dark:hover:shadow-neu-dark flex text-gray-400 hover:text-gray-800 dark:duration-0 dark:text-gray-600 dark:hover:ring-1 ring-cyan-800 dark:hover:text-gray-500 justify-center items-center transition-all md:duration-500 ml-7 p-3 md:p-3 rounded-xl"
   on:click={toggleDarkMode}
-  name="Toggle dark mode"
+  aria-label="Dark mode toggle"
 >
   {#if darkMode}
     <svg
