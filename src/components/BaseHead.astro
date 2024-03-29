@@ -7,11 +7,6 @@ interface Props {
   description: string;
   image?: string;
 }
-<script
-  defer
-  data-domain="pelto.dev"
-  src="http://plausible.pelto.dev/js/script.js"
-></script>;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -54,6 +49,7 @@ const {
 
 <!-- Plausible -->
 <script
+  is:inline
   defer
   data-domain="pelto.dev"
   src="http://plausible.pelto.dev/js/script.js"></script>
