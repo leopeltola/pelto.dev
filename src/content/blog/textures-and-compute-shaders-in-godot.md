@@ -1,6 +1,6 @@
 ---
 title: 'Textures and Compute Shaders in Godot 4'
-description: 'Lorem ipsum dolor sit amet'
+description: "Learn about using compute shaders in Godot for procedural terrain generation. This article covers challenges, tips, and key resources, including texture formats and Godot's Image class, based on experiences with Godot 4.1."
 pubDate: '2023-07-18'
 heroImage: '/placeholder-hero.jpg'
 tags: ['Godot', 'Gamedev']
