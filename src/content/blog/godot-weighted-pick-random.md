@@ -17,11 +17,11 @@ func weighted_pick_random(array: Array, weights: Array):
 	if array.is_empty():
 		push_error("Tried picking a weighted random value from an empty array")
 		return null
-	var sum := 0
+	var sum := 0.0
 	for num in weights:
 		sum += num
 	var rand := randf_range(0, sum)
-	var cumulative := 0
+	var cumulative := 0.0
 	for i in array.size():
 		cumulative += weights[i]
 		if rand <= cumulative:
