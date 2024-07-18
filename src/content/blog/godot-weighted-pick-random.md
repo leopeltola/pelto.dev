@@ -26,7 +26,6 @@ func weighted_pick_random(array: Array, weights: Array):
 		cumulative += weights[i]
 		if rand <= cumulative:
 			return array[i]
-	assert(false, "This should never happen")
 ```
 
 You can use the function like this:
